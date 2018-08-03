@@ -1,6 +1,6 @@
 # For the beasts of Watch and Code
 
-These problems are for Watch and Code members who have completed all the course material and want to keep getting better. Each solution should adhere to [Airbnb's style guide](https://github.com/airbnb/javascript/tree/es5-deprecated/es5), unless there's aleady a pre-existing style.
+These problems are for Watch and Code members who have completed all the course material and want to keep getting better. Each solution should adhere to [Airbnb's style guide](https://github.com/airbnb/javascript/tree/es5-deprecated/es5), unless there's already a pre-existing style.
 
 ## 1. [Improving `runWithDebugger`](https://github.com/gordonmzhu/beasts/issues/2)
 
