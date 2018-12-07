@@ -13,3 +13,5 @@ These problems are for Watch and Code members who have completed all the course 
 ## 5. [`isPrototypeOf`](https://github.com/gordonmzhu/beasts/issues/4)
 
 ## 6. [A twist on `accounting.toFixed`](https://github.com/gordonmzhu/beasts/issues/7)
+
+## 7. [Nested todos](https://github.com/gordonmzhu/beasts/issues/11)
