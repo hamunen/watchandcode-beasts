@@ -1,0 +1,53 @@
+<script src="simpleTest.js"></script>
+<script src="librarySystem.js"></script>
+<script>
+  
+  tests({
+    'Single dependency.': function () {
+      librarySystem('dependency', [], function() {
+        return 'loaded dependency';
+      });
+      
+      librarySystem('app', ['dependency'], function(dependency) {
+        return 'app with ' + dependency;
+      });
+      
+      eq('app with loaded dependency', librarySystem('app'));
+    },
+    
+    'Multiple dependencies': function () {
+      librarySystem('name', [], function() {
+        return 'Gordon';
+      });
+      
+      librarySystem('company', [], function() {
+        return 'Watch and Code';
+      });
+      
+      librarySystem('workBlurb', ['name', 'company'], function(name, company) {
+        return name + ' works at ' + company;
+      });
+      
+      eq('Gordon works at Watch and Code',librarySystem('workBlurb'));
+    },
+    
+    'Libraries out of order': function () {
+      debugger;
+      librarySystem('workBlurb', ['depName', 'depCompany'], function(name, company) {
+        return name + ' works at ' + company;
+      });
+      
+      librarySystem('depName', [], function() {
+        return 'Gordon';
+      });
+      
+      librarySystem('depCompany', [], function() {
+        return 'Watch and Code';
+      });
+      
+      eq('Gordon works at Watch and Code',librarySystem('workBlurb'));
+    },
+    
+    
+  });
+</script>
