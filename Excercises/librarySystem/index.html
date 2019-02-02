@@ -32,7 +32,6 @@
     },
     
     'Libraries out of order': function () {
-      debugger;
       librarySystem('workBlurb', ['depName', 'depCompany'], function(name, company) {
         return name + ' works at ' + company;
       });
@@ -47,7 +46,27 @@
       
       eq('Gordon works at Watch and Code',librarySystem('workBlurb'));
     },
-    
+
+    'Callback run only once': function () {
+      var callbackCount = 0;
+      librarySystem('workBlurb', ['depName', 'depCompany'], function(name, company) {
+        callbackCount++;
+        return name + ' works at ' + company;
+      });
+      
+      librarySystem('depName', [], function() {
+        return 'Gordon';
+      });
+      
+      librarySystem('depCompany', [], function() {
+        return 'Watch and Code';
+      });
+      
+      librarySystem('workBlurb');
+      librarySystem('workBlurb');
+      eq('Gordon works at Watch and Code',librarySystem('workBlurb'));
+      eq(1, callbackCount);
+    }
     
   });
 </script>
